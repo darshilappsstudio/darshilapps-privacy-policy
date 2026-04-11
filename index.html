@@ -295,12 +295,80 @@
       .header h1 { font-size: 24px; }
       .gdpr-table td:first-child { white-space: normal; width: 40%; }
     }
+
+    /* ── Sticky Navbar ── */
+    .navbar {
+      position: sticky;
+      top: 0;
+      z-index: 999;
+      background: #fff;
+      border-bottom: 1px solid #e8eaed;
+      box-shadow: 0 1px 4px rgba(0,0,0,0.08);
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 0 24px;
+      height: 56px;
+    }
+    .navbar-brand {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      font-weight: 600;
+      font-size: 15px;
+      color: #202124;
+      text-decoration: none;
+    }
+    .navbar-brand .app-icon {
+      width: 32px;
+      height: 32px;
+      background: linear-gradient(135deg, #1a73e8, #0d47a1);
+      border-radius: 8px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 16px;
+      color: #fff;
+    }
+    .navbar-links {
+      display: flex;
+      align-items: center;
+      gap: 6px;
+    }
+    .navbar-links a {
+      font-size: 14px;
+      font-weight: 500;
+      color: #3c4043;
+      text-decoration: none;
+      padding: 7px 14px;
+      border-radius: 20px;
+      transition: background 0.15s, color 0.15s;
+    }
+    .navbar-links a:hover { background: #f1f3f4; color: #202124; text-decoration: none; }
+    .navbar-links a.active { background: #e8f0fe; color: #1a73e8; }
+    @media (max-width: 480px) {
+      .navbar { padding: 0 14px; }
+      .navbar-brand .brand-label { display: none; }
+      .navbar-links a { padding: 7px 10px; font-size: 13px; }
+    }
   </style>
 </head>
 <body>
 
+<!-- ════════════════ NAVBAR ════════════════ -->
+<nav class="navbar">
+  <a class="navbar-brand" href="#privacy-policy">
+    <div class="app-icon">🛡️</div>
+    <span class="brand-label">Darshil Apps Studio</span>
+  </a>
+  <div class="navbar-links">
+    <a href="#privacy-policy" class="active">🔒 Privacy Policy</a>
+    <a href="mailto:darshilapps.studio@gmail.com">✉️ Contact</a>
+  </div>
+</nav>
+
 <!-- ════════════════ HEADER ════════════════ -->
-<div class="header">
+<div class="header" id="privacy-policy">
   <h1>🛡️ Privacy Policy</h1>
   <p>Status Saver &amp; Downloader App — by Darshil Apps Studio</p>
   <!-- CHANGE 1: Added both Effective Date AND Last Updated badges -->
@@ -410,7 +478,7 @@
       <p>In accordance with GDPR requirements, we provide the following summary of our data processing:</p>
       <table class="gdpr-table">
         <tr><td>Data Controller</td><td>Darshil Apps Studio</td></tr>
-        <tr><td>Contact Email</td><td>darshilapps.studio@gmail.com</td></tr>
+        <tr><td>Contact Email</td><td><a href="/cdn-cgi/l/email-protection" class="__cf_email__" data-cfemail="c3a7a2b1b0abaaafa2b3b3b0edb0b7b6a7aaac83a4aea2aaafeda0acae">[email&#160;protected]</a></td></tr>
         <tr><td>Data Collected</td><td>IP address, device identifiers, usage data, support emails</td></tr>
         <tr><td>Purpose of Processing</td><td>App functionality, analytics, and user support</td></tr>
         <tr><td>Legal Basis</td><td>Legitimate Interest (analytics/security) and User Consent (storage access)</td></tr>
@@ -520,7 +588,7 @@
         <div class="right-chip"><span>↩️</span> Withdraw consent</div>
         <div class="right-chip"><span>📢</span> Lodge a complaint</div>
       </div>
-      <p style="margin-top:14px;">To exercise any of these rights, contact us at <strong>darshilapps.studio@gmail.com</strong>.</p>
+      <p style="margin-top:14px;">To exercise any of these rights, contact us at <strong><a href="/cdn-cgi/l/email-protection" class="__cf_email__" data-cfemail="62060310110a0b0e031212114c111617060b0d22050f030b0e4c010d0f">[email&#160;protected]</a></strong>.</p>
     </div>
   </div>
 
@@ -584,7 +652,7 @@
     </div>
     <div class="card-body">
       <p>This Application is <strong>not directed at children under the age of 13</strong>. We do not knowingly collect personal data from children under 13. If we become aware that a child under 13 has provided personal information, we will delete it immediately.</p>
-      <p>If you are a parent or guardian and believe your child has provided us with personal data, please contact us at <strong>darshilapps.studio@gmail.com</strong>.</p>
+      <p>If you are a parent or guardian and believe your child has provided us with personal data, please contact us at <strong><a href="/cdn-cgi/l/email-protection" class="__cf_email__" data-cfemail="1a7e7b68697273767b6a6a6934696e6f7e73755a7d777b737634797577">[email&#160;protected]</a></strong>.</p>
     </div>
   </div>
 
@@ -619,20 +687,5 @@
     </div>
     <div class="card-body">
       <p>If you have any questions, concerns, or requests regarding this privacy policy or your personal data, please do not hesitate to contact us:</p>
-      <a class="contact-link" href="mailto:darshilapps.studio@gmail.com">
-        ✉️ darshilapps.studio@gmail.com
-      </a>
-      <p style="margin-top:14px; font-size:14px; color:#80868b;">We aim to respond to all requests within <strong>30 days</strong>.</p>
-    </div>
-  </div>
-
-</div><!-- /container -->
-
-<!-- ════════════════ FOOTER ════════════════ -->
-<div class="footer">
-  <strong>Privacy Policy — Status Saver &amp; Downloader</strong><br>
-  Developed by Darshil Apps Studio &nbsp;·&nbsp; Effective: April 5, 2026 &nbsp;·&nbsp; Last Updated: April 5, 2026
-</div>
-
-</body>
-</html>
+      <a class="contact-link" href="/cdn-cgi/l/email-protection#0e6a6f7c7d6667626f7e7e7d207d7a7b6a67614e69636f6762206d6163">
+        ✉️ <span class="__cf_email__" data-cfemail="debabfacadb6b7b2bfaeaeadf0adaaabbab7b19eb9b3bfb7b2f0bdb1b3">[email&#160;protected]</span
