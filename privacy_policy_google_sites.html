@@ -1,0 +1,580 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Privacy Policy – Status Saver & Downloader</title>
+  <style>
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+
+    body {
+      font-family: 'Google Sans', Roboto, Arial, sans-serif;
+      background: #f8f9fa;
+      color: #202124;
+      line-height: 1.7;
+      font-size: 15px;
+    }
+
+    /* ── Header ── */
+    .header {
+      background: linear-gradient(135deg, #1a73e8 0%, #0d47a1 100%);
+      color: #fff;
+      padding: 56px 24px 48px;
+      text-align: center;
+    }
+    .header h1 {
+      font-size: 32px;
+      font-weight: 700;
+      letter-spacing: -0.5px;
+      margin-bottom: 10px;
+    }
+    .header p {
+      font-size: 15px;
+      opacity: 0.88;
+      max-width: 520px;
+      margin: 0 auto 16px;
+    }
+    .badge {
+      display: inline-block;
+      background: rgba(255,255,255,0.18);
+      border: 1px solid rgba(255,255,255,0.4);
+      color: #fff;
+      padding: 6px 18px;
+      border-radius: 20px;
+      font-size: 13px;
+      font-weight: 500;
+    }
+
+    /* ── Layout ── */
+    .container {
+      max-width: 820px;
+      margin: 0 auto;
+      padding: 40px 20px 60px;
+    }
+
+    /* ── Cards ── */
+    .card {
+      background: #fff;
+      border-radius: 12px;
+      box-shadow: 0 1px 3px rgba(0,0,0,0.10), 0 1px 2px rgba(0,0,0,0.06);
+      margin-bottom: 24px;
+      overflow: hidden;
+    }
+
+    .card-header {
+      display: flex;
+      align-items: center;
+      gap: 14px;
+      padding: 20px 24px 16px;
+      border-bottom: 1px solid #f1f3f4;
+    }
+    .card-icon {
+      width: 40px;
+      height: 40px;
+      border-radius: 10px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 20px;
+      flex-shrink: 0;
+    }
+    .card-header h2 {
+      font-size: 17px;
+      font-weight: 600;
+      color: #202124;
+    }
+    .card-header .section-num {
+      font-size: 12px;
+      font-weight: 500;
+      color: #80868b;
+      margin-top: 2px;
+    }
+    .card-body { padding: 20px 24px 24px; }
+
+    /* Icon background colors */
+    .ic-blue   { background: #e8f0fe; }
+    .ic-green  { background: #e6f4ea; }
+    .ic-orange { background: #fce8e6; }
+    .ic-purple { background: #f3e8fd; }
+    .ic-teal   { background: #e8f5e9; }
+    .ic-amber  { background: #fef3e2; }
+    .ic-red    { background: #fce8e6; }
+    .ic-gray   { background: #f1f3f4; }
+    .ic-navy   { background: #e8eaf6; }
+    .ic-pink   { background: #fce4ec; }
+    .ic-brown  { background: #fbe9e7; }
+
+    /* ── Typography ── */
+    p { margin-bottom: 12px; color: #3c4043; }
+    p:last-child { margin-bottom: 0; }
+
+    h3 {
+      font-size: 15px;
+      font-weight: 600;
+      color: #202124;
+      margin: 18px 0 8px;
+    }
+    h3:first-child { margin-top: 0; }
+
+    ul, ol {
+      padding-left: 22px;
+      margin-bottom: 12px;
+      color: #3c4043;
+    }
+    li { margin-bottom: 6px; }
+    li:last-child { margin-bottom: 0; }
+
+    /* ── GDPR Table ── */
+    .gdpr-table {
+      width: 100%;
+      border-collapse: collapse;
+      font-size: 14px;
+      margin-top: 4px;
+    }
+    .gdpr-table tr { border-bottom: 1px solid #f1f3f4; }
+    .gdpr-table tr:last-child { border-bottom: none; }
+    .gdpr-table td {
+      padding: 10px 8px;
+      vertical-align: top;
+    }
+    .gdpr-table td:first-child {
+      font-weight: 600;
+      color: #202124;
+      width: 38%;
+      white-space: nowrap;
+    }
+    .gdpr-table td:last-child { color: #3c4043; }
+
+    /* ── Rights grid ── */
+    .rights-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(190px, 1fr));
+      gap: 10px;
+      margin-top: 4px;
+    }
+    .right-chip {
+      background: #f8f9fa;
+      border: 1px solid #e8eaed;
+      border-radius: 8px;
+      padding: 10px 14px;
+      font-size: 14px;
+      color: #3c4043;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+    .right-chip span { font-size: 18px; }
+
+    /* ── Callout boxes ── */
+    .callout {
+      border-radius: 8px;
+      padding: 14px 16px;
+      margin: 14px 0;
+      font-size: 14px;
+      display: flex;
+      gap: 10px;
+      align-items: flex-start;
+    }
+    .callout-icon { font-size: 18px; flex-shrink: 0; }
+    .callout-green  { background: #e6f4ea; border-left: 4px solid #34a853; }
+    .callout-blue   { background: #e8f0fe; border-left: 4px solid #1a73e8; }
+    .callout-orange { background: #fef3e2; border-left: 4px solid #f9ab00; }
+    .callout-red    { background: #fce8e6; border-left: 4px solid #ea4335; }
+
+    /* ── Permission blocks ── */
+    .perm-block {
+      background: #f8f9fa;
+      border: 1px solid #e8eaed;
+      border-radius: 10px;
+      padding: 16px 18px;
+      margin-bottom: 16px;
+    }
+    .perm-block:last-child { margin-bottom: 0; }
+    .perm-title {
+      font-weight: 600;
+      font-size: 15px;
+      color: #202124;
+      margin-bottom: 10px;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+    .perm-badge {
+      font-family: monospace;
+      font-size: 11px;
+      background: #e8eaed;
+      color: #3c4043;
+      padding: 2px 7px;
+      border-radius: 4px;
+      font-weight: 500;
+    }
+    .android-version {
+      background: #fff;
+      border: 1px solid #e8eaed;
+      border-radius: 8px;
+      padding: 12px 14px;
+      margin: 8px 0;
+      font-size: 14px;
+    }
+    .android-version strong {
+      color: #1a73e8;
+      display: block;
+      margin-bottom: 4px;
+    }
+    .why-row {
+      display: flex;
+      gap: 8px;
+      padding: 10px 0 2px;
+      font-size: 14px;
+      align-items: flex-start;
+    }
+    .why-row .label {
+      font-weight: 600;
+      color: #202124;
+      white-space: nowrap;
+    }
+
+    /* ── Contact card ── */
+    .contact-link {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      background: #e8f0fe;
+      color: #1a73e8;
+      padding: 10px 18px;
+      border-radius: 8px;
+      text-decoration: none;
+      font-weight: 500;
+      margin-top: 6px;
+    }
+
+    /* ── Divider ── */
+    .section-divider {
+      text-align: center;
+      font-size: 12px;
+      color: #80868b;
+      margin: 8px 0 28px;
+      letter-spacing: 0.5px;
+    }
+
+    /* ── Footer ── */
+    .footer {
+      text-align: center;
+      padding: 28px 20px;
+      background: #fff;
+      border-top: 1px solid #e8eaed;
+      font-size: 13px;
+      color: #80868b;
+    }
+    .footer strong { color: #3c4043; }
+
+    @media (max-width: 600px) {
+      .header h1 { font-size: 24px; }
+      .gdpr-table td:first-child { white-space: normal; width: 40%; }
+    }
+  </style>
+</head>
+<body>
+
+<!-- ════════════════ HEADER ════════════════ -->
+<div class="header">
+  <h1>🛡️ Privacy Policy</h1>
+  <p>Status Saver &amp; Downloader App — by Darshil Apps Studio</p>
+  <span class="badge">📅 Effective Date: April 5, 2026</span>
+</div>
+
+<!-- ════════════════ CONTENT ════════════════ -->
+<div class="container">
+
+  <!-- 1. Overview -->
+  <div class="card">
+    <div class="card-header">
+      <div class="card-icon ic-blue">🎯</div>
+      <div>
+        <div class="section-num">SECTION 1</div>
+        <h2>Overview and Purpose</h2>
+      </div>
+    </div>
+    <div class="card-body">
+      <p>This privacy policy applies to the <strong>Status Saver &amp; Downloader App</strong> (the "Application") for mobile devices, created by <strong>Darshil Apps Studio</strong> (the "Service Provider") as a free service. This service is provided <em>"AS IS."</em></p>
+      <p>The Application is a utility tool designed to help users interact with media files that are already stored locally on their mobile device. We respect your privacy and are committed to maintaining a secure and transparent experience.</p>
+    </div>
+  </div>
+
+  <!-- 2. Permissions -->
+  <div class="card">
+    <div class="card-header">
+      <div class="card-icon ic-orange">🔐</div>
+      <div>
+        <div class="section-num">SECTION 2</div>
+        <h2>Permissions Required and Why We Need Them</h2>
+      </div>
+    </div>
+    <div class="card-body">
+
+      <div class="callout callout-blue">
+        <span class="callout-icon">ℹ️</span>
+        <div>To function correctly, the Application requires the following permissions. We explicitly declare that <strong>none of these permissions are used to steal, transmit, or exploit your personal data.</strong></div>
+      </div>
+
+      <!-- Storage Permission -->
+      <div class="perm-block">
+        <div class="perm-title">
+          💾 Storage Permission
+          <span class="perm-badge">Varies by Android Version</span>
+        </div>
+
+        <p style="font-size:14px; color:#3c4043; margin-bottom:10px;">Because of how Android protects your files, our app requests different storage permissions based on your device's Android version:</p>
+
+        <div class="android-version">
+          <strong>📱 Android 10 and older</strong>
+          We request standard <code>READ_EXTERNAL_STORAGE</code> and <code>WRITE_EXTERNAL_STORAGE</code> permissions. This allows the app to find and read the temporary status files on your device and write/save them to your gallery.
+        </div>
+
+        <div class="android-version">
+          <strong>📱 Android 11 and newer</strong>
+          Android introduced stricter file protections. Therefore, we use the <strong>Storage Access Framework (SAF)</strong>. We do <u>not</u> ask for broad storage access. Instead, we ask you to grant access only to the specific folder where statuses are saved.
+        </div>
+
+        <div class="why-row">
+          <span class="label">🎯 Why we need it:</span>
+          <span>The sole purpose of our app is to act as a "Status Saver". To do this, the app must read the specific folders on your device where messaging apps temporarily cache status images and videos.</span>
+        </div>
+
+        <div class="callout callout-green" style="margin-top:12px;">
+          <span class="callout-icon">✅</span>
+          <div><strong>Data Safety:</strong> We <strong>DO NOT</strong> upload these files to any server. We <strong>DO NOT</strong> access your general photos, personal documents, or files unrelated to statuses. All media processing happens entirely <strong>offline on your device</strong>, securely.</div>
+        </div>
+      </div>
+
+      <!-- Internet Permission -->
+      <div class="perm-block">
+        <div class="perm-title">
+          🌐 Internet Access
+          <span class="perm-badge">INTERNET</span>
+        </div>
+
+        <p style="font-size:14px; color:#3c4043; margin-bottom:10px;"><strong>Why we need it:</strong></p>
+        <ol style="font-size:14px; margin-bottom:12px;">
+          <li>To load non-obtrusive advertisements (if applicable) which keep the app free.</li>
+          <li>To send anonymous analytics and crash reports (e.g., via Firebase) so we can fix bugs and improve the app.</li>
+          <li>To allow you to easily share links or media externally.</li>
+        </ol>
+
+        <div class="callout callout-green">
+          <span class="callout-icon">✅</span>
+          <div><strong>Data Safety:</strong> This permission is <strong>NOT</strong> used to transmit your saved statuses or private files to our servers.</div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+
+  <!-- 3. GDPR Summary -->
+  <div class="card">
+    <div class="card-header">
+      <div class="card-icon ic-navy">🔒</div>
+      <div>
+        <div class="section-num">SECTION 3</div>
+        <h2>Data Processing Summary (GDPR Transparency)</h2>
+      </div>
+    </div>
+    <div class="card-body">
+      <p>In accordance with GDPR requirements, we provide the following summary of our data processing:</p>
+      <table class="gdpr-table">
+        <tr><td>Data Controller</td><td>Darshil Apps Studio</td></tr>
+        <tr><td>Contact Email</td><td>darshilapps.studio@gmail.com</td></tr>
+        <tr><td>Data Collected</td><td>IP address, device identifiers, usage data, support emails</td></tr>
+        <tr><td>Purpose of Processing</td><td>App functionality, analytics, and user support</td></tr>
+        <tr><td>Legal Basis</td><td>Legitimate Interest (analytics/security) and User Consent (storage access)</td></tr>
+        <tr><td>Processing Role</td><td>We act as Data Controller</td></tr>
+        <tr><td>Data Source</td><td>Collected from user interaction with the Application</td></tr>
+        <tr><td>Data Sharing</td><td>Google services and professional advisors</td></tr>
+        <tr><td>International Transfers</td><td>Data may be processed outside your country (e.g., USA)</td></tr>
+        <tr><td>Retention Period</td><td>14 months (analytics), up to 5 years (support)</td></tr>
+        <tr><td>Automated Decisions</td><td>No automated decision-making or profiling</td></tr>
+        <tr><td>Statutory Requirement</td><td>Data collection is not a legal requirement</td></tr>
+        <tr><td>User Rights</td><td>Access, delete, restrict, object, portability</td></tr>
+        <tr><td>Withdraw Consent</td><td>Users can uninstall the app or email us to request data deletion</td></tr>
+        <tr><td>Complaint Rights</td><td>Users can contact their local Data Protection Authority</td></tr>
+      </table>
+    </div>
+  </div>
+
+  <!-- 4. Detailed Data Processing -->
+  <div class="card">
+    <div class="card-header">
+      <div class="card-icon ic-teal">📊</div>
+      <div>
+        <div class="section-num">SECTION 4</div>
+        <h2>Detailed Data Processing Information</h2>
+      </div>
+    </div>
+    <div class="card-body">
+      <table class="gdpr-table">
+        <tr><td>Data Processor(s)</td><td>Google LLC (Firebase Analytics, Firebase Crashlytics, Play Services)</td></tr>
+        <tr><td>Personal Data Used</td><td>IP Address, Device Identifiers (non-persistent), Diagnostic Data, Support Emails</td></tr>
+        <tr><td>Processing Purpose</td><td>App stability, analytics, and support</td></tr>
+        <tr><td>Legal Ground</td><td>Legitimate Interest &amp; Consent</td></tr>
+      </table>
+
+      <div class="callout callout-green" style="margin-top:16px;">
+        <span class="callout-icon">🔒</span>
+        <div><strong>Local Storage Clause:</strong> All statuses and media handled by the Application are processed locally only. We do <strong>NOT</strong> upload, access, or store your personal media on any server.</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- 5. Third-Party Sharing -->
+  <div class="card">
+    <div class="card-header">
+      <div class="card-icon ic-amber">🤝</div>
+      <div>
+        <div class="section-num">SECTION 5</div>
+        <h2>Third-Party Data Sharing &amp; Disclosure</h2>
+      </div>
+    </div>
+    <div class="card-body">
+      <div class="callout callout-orange">
+        <span class="callout-icon">⚠️</span>
+        <div>We do <strong>not sell</strong> your personal data. However, limited data may be shared with the following parties:</div>
+      </div>
+
+      <h3>Google LLC (Data Processor)</h3>
+      <ul>
+        <li><strong>Services:</strong> Firebase Analytics, Firebase Crashlytics, Google Play Services</li>
+        <li><strong>Purpose:</strong> App analytics and performance monitoring</li>
+        <li><strong>Data:</strong> Anonymized usage data</li>
+        <li><strong>Legal Ground:</strong> Legitimate Interest</li>
+      </ul>
+
+      <h3>Professional Advisors</h3>
+      <ul>
+        <li>Accountants and Legal Advisors</li>
+        <li><strong>Purpose:</strong> Compliance and legal obligations</li>
+        <li><strong>Legal Ground:</strong> Legal Obligation</li>
+      </ul>
+
+      <h3>Legal Authorities</h3>
+      <p>Data may be disclosed if required by applicable law or court order.</p>
+    </div>
+  </div>
+
+  <!-- 6. Your Rights -->
+  <div class="card">
+    <div class="card-header">
+      <div class="card-icon ic-purple">⚖️</div>
+      <div>
+        <div class="section-num">SECTION 6</div>
+        <h2>Your Data Protection Rights</h2>
+      </div>
+    </div>
+    <div class="card-body">
+      <p>Under applicable data protection laws, you have the following rights:</p>
+      <div class="rights-grid">
+        <div class="right-chip"><span>👁️</span> Access your data</div>
+        <div class="right-chip"><span>✏️</span> Correct your data</div>
+        <div class="right-chip"><span>🗑️</span> Delete your data</div>
+        <div class="right-chip"><span>🚫</span> Restrict processing</div>
+        <div class="right-chip"><span>✋</span> Object to processing</div>
+        <div class="right-chip"><span>📦</span> Data portability</div>
+        <div class="right-chip"><span>↩️</span> Withdraw consent</div>
+        <div class="right-chip"><span>📢</span> Lodge a complaint</div>
+      </div>
+      <p style="margin-top:14px;">To exercise any of these rights, contact us at <strong>darshilapps.studio@gmail.com</strong>.</p>
+    </div>
+  </div>
+
+  <!-- 7. International Transfers -->
+  <div class="card">
+    <div class="card-header">
+      <div class="card-icon ic-green">🌍</div>
+      <div>
+        <div class="section-num">SECTION 7</div>
+        <h2>International Data Transfers</h2>
+      </div>
+    </div>
+    <div class="card-body">
+      <p>Data may be processed in countries outside your region (e.g., USA via Google). We ensure appropriate protection through <strong>Standard Contractual Clauses (SCCs)</strong> and other legally recognized transfer mechanisms.</p>
+    </div>
+  </div>
+
+  <!-- 8. Retention -->
+  <div class="card">
+    <div class="card-header">
+      <div class="card-icon ic-gray">🕒</div>
+      <div>
+        <div class="section-num">SECTION 8</div>
+        <h2>Data Retention Policy</h2>
+      </div>
+    </div>
+    <div class="card-body">
+      <table class="gdpr-table">
+        <tr><td>Analytics data</td><td>14 months</td></tr>
+        <tr><td>Security / crash logs</td><td>3 months</td></tr>
+        <tr><td>Support emails</td><td>Up to 5 years</td></tr>
+      </table>
+    </div>
+  </div>
+
+  <!-- 9. Disclaimer -->
+  <div class="card">
+    <div class="card-header">
+      <div class="card-icon ic-red">⚠️</div>
+      <div>
+        <div class="section-num">SECTION 9</div>
+        <h2>Disclaimer</h2>
+      </div>
+    </div>
+    <div class="card-body">
+      <div class="callout callout-orange">
+        <span class="callout-icon">📌</span>
+        <div>This Application is <strong>not affiliated with WhatsApp, Meta, or any third-party platforms.</strong> All trademarks and brand names belong to their respective owners. This app merely reads files already cached on your device by those platforms.</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- 10. Children's Privacy -->
+  <div class="card">
+    <div class="card-header">
+      <div class="card-icon ic-pink">👨‍👩‍👧‍👦</div>
+      <div>
+        <div class="section-num">SECTION 10</div>
+        <h2>Children's Privacy</h2>
+      </div>
+    </div>
+    <div class="card-body">
+      <p>This Application is <strong>not directed at children under the age of 13</strong>. We do not knowingly collect personal data from children under 13. If we become aware that a child under 13 has provided personal information, we will delete it immediately.</p>
+      <p>If you are a parent or guardian and believe your child has provided us with personal data, please contact us at <strong>darshilapps.studio@gmail.com</strong>.</p>
+    </div>
+  </div>
+
+  <!-- 11. Contact -->
+  <div class="card">
+    <div class="card-header">
+      <div class="card-icon ic-blue">📞</div>
+      <div>
+        <div class="section-num">SECTION 11</div>
+        <h2>Contact Us</h2>
+      </div>
+    </div>
+    <div class="card-body">
+      <p>If you have any questions, concerns, or requests regarding this privacy policy or your personal data, please do not hesitate to contact us:</p>
+      <a class="contact-link" href="mailto:darshilapps.studio@gmail.com">
+        ✉️ darshilapps.studio@gmail.com
+      </a>
+      <p style="margin-top:14px; font-size:14px; color:#80868b;">We aim to respond to all requests within <strong>30 days</strong>.</p>
+    </div>
+  </div>
+
+</div><!-- /container -->
+
+<!-- ════════════════ FOOTER ════════════════ -->
+<div class="footer">
+  <strong>Privacy Policy — Status Saver &amp; Downloader</strong><br>
+  Developed by Darshil Apps Studio &nbsp;·&nbsp; Effective: April 5, 2026<br>
+  <span style="font-size:12px; margin-top:6px; display:block;">This policy may be updated periodically. Continued use of the app constitutes acceptance of any changes.</span>
+</div>
+
+</body>
+</html>
