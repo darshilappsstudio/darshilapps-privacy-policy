@@ -396,70 +396,83 @@
     </div>
   </div>
 
-  <!-- 2. Permissions -->
+  <!-- 2a. Storage Permission -->
   <div class="card">
     <div class="card-header">
-      <div class="card-icon ic-orange">🔐</div>
+      <div class="card-icon ic-orange">💾</div>
       <div>
-        <div class="section-num">SECTION 2</div>
-        <h2>Permissions Required and Why We Need Them</h2>
+        <div class="section-num">SECTION 2A</div>
+        <h2>Storage Permission — Why We Need It</h2>
       </div>
     </div>
     <div class="card-body">
 
       <div class="callout callout-blue">
         <span class="callout-icon">ℹ️</span>
-        <div>To function correctly, the Application requires the following permissions. We explicitly declare that <strong>none of these permissions are used to steal, transmit, or exploit your personal data.</strong></div>
+        <div>We explicitly declare that <strong>storage permission is NOT used to steal, transmit, or exploit your personal data.</strong> It is used solely to read and save WhatsApp status media on your device.</div>
       </div>
 
-      <!-- Storage Permission -->
-      <div class="perm-block">
-        <div class="perm-title">
-          💾 Storage Permission
-          <span class="perm-badge">Varies by Android Version</span>
-        </div>
+      <p style="font-size:14px; color:#3c4043; margin-bottom:10px;">Because of how Android protects your files, our app requests different storage permissions based on your device's Android version:</p>
 
-        <p style="font-size:14px; color:#3c4043; margin-bottom:10px;">Because of how Android protects your files, our app requests different storage permissions based on your device's Android version:</p>
-
-        <div class="android-version">
-          <strong>📱 Android 10 and older</strong>
-          We request standard <code>READ_EXTERNAL_STORAGE</code> and <code>WRITE_EXTERNAL_STORAGE</code> permissions. This allows the app to find and read the temporary status files on your device and write/save them to your gallery.
-        </div>
-
-        <div class="android-version">
-          <strong>📱 Android 11 and newer</strong>
-          Android introduced stricter file protections. Therefore, we use the <strong>Storage Access Framework (SAF)</strong>. We do <u>not</u> ask for broad storage access. Instead, we ask you to grant access only to the specific folder where statuses are saved.
-        </div>
-
-        <div class="why-row">
-          <span class="label">🎯 Why we need it:</span>
-          <span>The sole purpose of our app is to act as a "Status Saver". To do this, the app must read the specific folders on your device where messaging apps temporarily cache status images and videos.</span>
-        </div>
-
-        <div class="callout callout-green" style="margin-top:12px;">
-          <span class="callout-icon">✅</span>
-          <div><strong>Data Safety:</strong> We <strong>DO NOT</strong> upload these files to any server. We <strong>DO NOT</strong> access your general photos, personal documents, or files unrelated to statuses. All media processing happens entirely <strong>offline on your device</strong>, securely.</div>
-        </div>
+      <div class="android-version">
+        <strong>📱 Android 10 and older</strong>
+        We request standard <code>READ_EXTERNAL_STORAGE</code> and <code>WRITE_EXTERNAL_STORAGE</code> permissions. This allows the app to find and read the temporary status files on your device and write/save them to your gallery.
       </div>
 
-      <!-- Internet Permission -->
-      <div class="perm-block">
-        <div class="perm-title">
-          🌐 Internet Access
-          <span class="perm-badge">INTERNET</span>
-        </div>
+      <div class="android-version">
+        <strong>📱 Android 11 and newer</strong>
+        Android introduced stricter file protections. Therefore, we use the <strong>Storage Access Framework (SAF)</strong>. We do <u>not</u> ask for broad storage access. Instead, we ask you to grant access only to the specific folder where statuses are saved.
+      </div>
 
-        <p style="font-size:14px; color:#3c4043; margin-bottom:10px;"><strong>Why we need it:</strong></p>
-        <ol style="font-size:14px; margin-bottom:12px;">
-          <li>To load non-obtrusive advertisements (if applicable) which keep the app free.</li>
-          <li>To send anonymous analytics and crash reports (e.g., via Firebase) so we can fix bugs and improve the app.</li>
-          <li>To allow you to easily share links or media externally.</li>
-        </ol>
+      <div class="why-row">
+        <span class="label">🎯 Why we need it:</span>
+        <span>The sole purpose of our app is to act as a "Status Saver". To do this, the app must read the specific folders on your device where messaging apps temporarily cache status images and videos.</span>
+      </div>
 
-        <div class="callout callout-green">
-          <span class="callout-icon">✅</span>
-          <div><strong>Data Safety:</strong> This permission is <strong>NOT</strong> used to transmit your saved statuses or private files to our servers.</div>
-        </div>
+      <div class="callout callout-green" style="margin-top:12px;">
+        <span class="callout-icon">✅</span>
+        <div><strong>Data Safety:</strong> We <strong>DO NOT</strong> upload these files to any server. We <strong>DO NOT</strong> access your general photos, personal documents, or files unrelated to statuses. All media processing happens entirely <strong>offline on your device</strong>, securely.</div>
+      </div>
+
+    </div>
+  </div>
+
+  <!-- 2b. Internet Permission -->
+  <div class="card">
+    <div class="card-header">
+      <div class="card-icon ic-blue">🌐</div>
+      <div>
+        <div class="section-num">SECTION 2B</div>
+        <h2>Internet Access — Why We Need It</h2>
+      </div>
+    </div>
+    <div class="card-body">
+
+      <div class="callout callout-blue">
+        <span class="callout-icon">ℹ️</span>
+        <div>We explicitly declare that <strong>internet permission is NOT used to upload, transmit, or share your personal media or files.</strong></div>
+      </div>
+
+      <p style="font-size:14px; color:#3c4043; margin-bottom:10px;">The internet permission is used only for the following 3 specific purposes:</p>
+
+      <div class="android-version">
+        <strong>📢 1. Advertisements</strong>
+        To load non-obtrusive advertisements (if applicable) which help keep the app free for all users.
+      </div>
+
+      <div class="android-version">
+        <strong>📊 2. Analytics &amp; Crash Reports</strong>
+        To send anonymous, non-personal analytics and crash reports via Firebase so we can identify bugs and improve app performance.
+      </div>
+
+      <div class="android-version">
+        <strong>🔗 3. External Sharing</strong>
+        To allow you to easily share links or media to other apps externally, when you choose to do so.
+      </div>
+
+      <div class="callout callout-green" style="margin-top:12px;">
+        <span class="callout-icon">✅</span>
+        <div><strong>Data Safety:</strong> This permission is <strong>NOT</strong> used to transmit your saved statuses, media files, or any private data to our servers or any third party.</div>
       </div>
 
     </div>
