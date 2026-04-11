@@ -30,9 +30,16 @@
     }
     .header p {
       font-size: 15px;
-      opacity: 0.88;
+      opacity: 1;
+      color: #ffffff;
       max-width: 520px;
       margin: 0 auto 16px;
+    }
+    .header-badges {
+      display: flex;
+      gap: 10px;
+      justify-content: center;
+      flex-wrap: wrap;
     }
     .badge {
       display: inline-block;
@@ -124,6 +131,9 @@
     li { margin-bottom: 6px; }
     li:last-child { margin-bottom: 0; }
 
+    a { color: #1a73e8; text-decoration: none; }
+    a:hover { text-decoration: underline; }
+
     /* ── GDPR Table ── */
     .gdpr-table {
       width: 100%;
@@ -198,6 +208,7 @@
       display: flex;
       align-items: center;
       gap: 8px;
+      flex-wrap: wrap;
     }
     .perm-badge {
       font-family: monospace;
@@ -247,15 +258,27 @@
       font-weight: 500;
       margin-top: 6px;
     }
+    .contact-link:hover { background: #d2e3fc; text-decoration: none; }
 
-    /* ── Divider ── */
-    .section-divider {
-      text-align: center;
-      font-size: 12px;
-      color: #80868b;
-      margin: 8px 0 28px;
-      letter-spacing: 0.5px;
+    /* ── Google link box ── */
+    .ext-link-box {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      background: #f8f9fa;
+      border: 1px solid #e8eaed;
+      border-radius: 10px;
+      padding: 14px 16px;
+      margin-top: 14px;
+      text-decoration: none;
+      color: #3c4043;
+      transition: background 0.15s;
     }
+    .ext-link-box:hover { background: #e8f0fe; border-color: #1a73e8; text-decoration: none; }
+    .ext-link-box .ext-icon { font-size: 24px; flex-shrink: 0; }
+    .ext-link-box .ext-text { font-size: 14px; }
+    .ext-link-box .ext-text strong { display: block; color: #202124; margin-bottom: 2px; }
+    .ext-link-box .ext-url { font-size: 12px; color: #1a73e8; }
 
     /* ── Footer ── */
     .footer {
@@ -280,7 +303,11 @@
 <div class="header">
   <h1>🛡️ Privacy Policy</h1>
   <p>Status Saver &amp; Downloader App — by Darshil Apps Studio</p>
-  <span class="badge">📅 Effective Date: April 5, 2026</span>
+  <!-- CHANGE 1: Added both Effective Date AND Last Updated badges -->
+  <div class="header-badges">
+    <span class="badge">📅 Effective Date: April 5, 2026</span>
+    <span class="badge">🔄 Last Updated: April 5, 2026</span>
+  </div>
 </div>
 
 <!-- ════════════════ CONTENT ════════════════ -->
@@ -422,6 +449,17 @@
         <span class="callout-icon">🔒</span>
         <div><strong>Local Storage Clause:</strong> All statuses and media handled by the Application are processed locally only. We do <strong>NOT</strong> upload, access, or store your personal media on any server.</div>
       </div>
+
+      <!-- CHANGE 3: Added Google Privacy Policy link -->
+      <p style="margin-top:14px; font-size:14px; color:#3c4043;">For more information on how Google processes data on our behalf, please review Google's Privacy Policy:</p>
+      <a class="ext-link-box" href="https://policies.google.com/privacy" target="_blank" rel="noopener noreferrer">
+        <span class="ext-icon">🔗</span>
+        <div class="ext-text">
+          <strong>Google Privacy Policy</strong>
+          Covers Firebase Analytics, Firebase Crashlytics, and Google Play Services
+          <span class="ext-url">https://policies.google.com/privacy</span>
+        </div>
+      </a>
     </div>
   </div>
 
@@ -446,6 +484,7 @@
         <li><strong>Purpose:</strong> App analytics and performance monitoring</li>
         <li><strong>Data:</strong> Anonymized usage data</li>
         <li><strong>Legal Ground:</strong> Legitimate Interest</li>
+        <li><strong>Privacy Policy:</strong> <a href="https://policies.google.com/privacy" target="_blank" rel="noopener noreferrer">https://policies.google.com/privacy</a></li>
       </ul>
 
       <h3>Professional Advisors</h3>
@@ -549,12 +588,32 @@
     </div>
   </div>
 
-  <!-- 11. Contact -->
+  <!-- 11. Policy Updates -->
+  <!-- CHANGE 2: New dedicated section for policy update notification -->
+  <div class="card">
+    <div class="card-header">
+      <div class="card-icon ic-amber">🔄</div>
+      <div>
+        <div class="section-num">SECTION 11</div>
+        <h2>Policy Updates &amp; Changes</h2>
+      </div>
+    </div>
+    <div class="card-body">
+      <p>We may update this Privacy Policy from time to time to reflect changes in our practices, technology, legal requirements, or other factors.</p>
+      <div class="callout callout-blue">
+        <span class="callout-icon">📣</span>
+        <div>For <strong>significant or material changes</strong>, we will notify users via an <strong>in-app notice</strong> or by updating the <strong>"Last Updated"</strong> date at the top of this page. We encourage you to review this policy periodically to stay informed.</div>
+      </div>
+      <p>Your continued use of the Application after any changes constitutes your acceptance of the updated Privacy Policy. If you do not agree with the updated policy, please discontinue using the Application.</p>
+    </div>
+  </div>
+
+  <!-- 12. Contact (renumbered from 11) -->
   <div class="card">
     <div class="card-header">
       <div class="card-icon ic-blue">📞</div>
       <div>
-        <div class="section-num">SECTION 11</div>
+        <div class="section-num">SECTION 12</div>
         <h2>Contact Us</h2>
       </div>
     </div>
@@ -572,8 +631,7 @@
 <!-- ════════════════ FOOTER ════════════════ -->
 <div class="footer">
   <strong>Privacy Policy — Status Saver &amp; Downloader</strong><br>
-  Developed by Darshil Apps Studio &nbsp;·&nbsp; Effective: April 5, 2026<br>
-  <span style="font-size:12px; margin-top:6px; display:block;">This policy may be updated periodically. Continued use of the app constitutes acceptance of any changes.</span>
+  Developed by Darshil Apps Studio &nbsp;·&nbsp; Effective: April 5, 2026 &nbsp;·&nbsp; Last Updated: April 5, 2026
 </div>
 
 </body>
